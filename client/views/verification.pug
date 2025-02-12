@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Verifikasi Akun
+
+  if error
+    p(style='color: red;') #{error}
+
+  form(method='post', action='/auth/verify')
+    input(type='text', name='verification_code', placeholder='Kode Verifikasi', required)
+    button(type='submit') Verifikasi

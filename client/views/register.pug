@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .login-container
+    .header
+      .logo-container
+        img.logo(src='/images/logo.jpg', alt='Logo FE Open Course')
+        span.brand FE Open Course
+      nav.navigation
+        ul
+          li
+            a(href='#') Kelas
+          li
+            a(href='#') Sertifikat Terprogram
+          li
+            a(href='#') Tentang
+      .auth-buttons
+        button.daftar Daftar
+        button.masuk Masuk
+    .content
+      .login-box
+        h2.login-title Daftar
+        form(method='post', action='/auth/register')
+          .input-group
+            label(for='full_name') Nama Lengkap
+            input(type='text', name='full_name', id='full_name', placeholder='Nama Lengkap', required)
+          .input-group
+            label(for='email') Email
+            input(type='email', name='email', id='email', placeholder='Email', required)
+          .input-group
+            label(for='password') Password
+            input(type='password', name='password', id='password', placeholder='Password', required)
+          button.login-button(type='submit') Daftar
+        .login-options
+          span Sudah punya akun?
+          a(href='/login') Masuk
